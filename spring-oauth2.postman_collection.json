@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "f5b4c176-9077-4483-b1f1-88fd4d2d007c",
+		"name": "spring-oauth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "resource-server",
+			"item": [
+				{
+					"name": "/people",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsic3ByaW5nLXJlc291cmNlLXNlcnZlciIsInNwcmluZy1hdXRob3JpemF0aW9uLXNlcnZlciJdLCJ1c2VyX25hbWUiOiJ0ZXN0QHRlc3QuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTU5MzU2MTMyNCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjY2MjA4ODJlLWNkYWUtNDNjYi05NDJmLWNhNmNiMTE4NzdkMyIsImNsaWVudF9pZCI6IkZST05UX0VORF9BUFAifQ.4kfwrus_RoPFMsi1XCTj9RzgILHc3OV1Cc0vIeGVTxg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8091/people",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"people"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic RlJPTlRfRU5EX0FQUDpwYXNzd0ByZDEyMw==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "passw@rd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsic3ByaW5nLXJlc291cmNlLXNlcnZlciIsInNwcmluZy1hdXRob3JpemF0aW9uLXNlcnZlciJdLCJ1c2VyX25hbWUiOiJ0ZXN0QHRlc3QuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTU5MzU2MTMyNCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjY2MjA4ODJlLWNkYWUtNDNjYi05NDJmLWNhNmNiMTE4NzdkMyIsImNsaWVudF9pZCI6IkZST05UX0VORF9BUFAifQ.4kfwrus_RoPFMsi1XCTj9RzgILHc3OV1Cc0vIeGVTxg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
